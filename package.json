@@ -1,0 +1,23 @@
+{
+  "name": "burger-2-the-sequel",
+  "version": "1.0.0",
+  "description": "Burger 2: The Sequel the sequelized version of the burger app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bssheetal/Burger-2-The-Sequel.git"
+  },
+  "author": "sheetal",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bssheetal/Burger-2-The-Sequel/issues"
+  },
+  "homepage": "https://github.com/bssheetal/Burger-2-The-Sequel#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}

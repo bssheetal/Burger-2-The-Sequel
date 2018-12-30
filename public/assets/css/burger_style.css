@@ -1,0 +1,27 @@
+body {
+    background-color: #FFC04C;
+}
+
+
+.center {
+    display: block;
+    margin-top:1%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 47%;
+    height: 50%;
+  }
+
+  .display-4
+  {
+      text-align: center
+  }
+
+  .jumbotron
+  {
+    height: 5%;
+
+  }
+  .container{
+    height: 5%;
+  }
