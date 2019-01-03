@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="/assets/css/burger_style.css" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">  
+    <title>MVC Burgers</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    
+</head>
+
+<body>
+    <div class="container-fluid">
+        <table class="table table-borderless">
+             <div class="row" id="row1"> 
+                <div class="col-sm-12">
+                    <div class="container">
+                        <img src="/img/burger-1487481__340.png" class="center" alt="...">
+                        <h1 class="display-4">Eat Da Burger</h1>
+                    </div>
+                </div>
+               </div> 
+            <div class="row">
+                <div class="col-sm-4">
+                    <h2>Add a Burger</h2>
+                    <form id="addburger" class="button-size">
+                        <div class="form-group">
+                            <input type="text" id="burger" name="burger_name">
+                        </div>
+                        <div>
+                            <button id="addburgerbtn" type="submit">Add Burger</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="col-sm-4" id="Menu">
+                    <h2>Menu</h2>
+                   <div id="menu-list">
+                       
+                   </div>
+                </div>
+    
+                <div class="col-sm-4">
+                    <h2>Devoured it</h2>                   
+                </div>
+            
+            </div>
+        </table>
+    </div>
+    <script src="/js/burgers.js"></script>
+
+</body>
+
+</html>

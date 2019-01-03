@@ -1,4 +1,24 @@
-$(function () {
+console.log("Hello there");
+$(document).ready(function(){
+
+    $.getJSON("/api/burgers",function(data)
+    {
+        if(data)
+        {
+            for(var i=0;i<data.length;i++)
+            {
+                var ul=$("<ul>"); 
+                var li=$("<li>");              
+                li.append(`<p>${data[i].name}</p>`);
+                var btndevoured=$("<button>");
+                btndevoured.addClass("devourit");
+                btndevoured.text("devour-it");
+                li.append(btndevoured);
+                ul.append(li);
+                $("#menu-list").append(ul);
+            }
+        }
+    });
 
     $("#addburgerbtn").on("click", function (event) {
 
