@@ -16,7 +16,10 @@ router.get("/api/burgers", function (req, res) {
 
 });
 router.post("/api/burgers", function (req, res) {
-    db.Burger.create(req.body).then(function (data) {
+    db.Burger.create({
+        name:req.body.name,
+        devoured_state:req.body.devoured_state
+    }).then(function (data) {
         res.json(data);
     })
 });
