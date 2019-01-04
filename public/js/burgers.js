@@ -6,23 +6,25 @@ $(document).ready(function () {
             $("#menu-list").empty();
             if (data) {
                 for (var i = 0; i < data.length; i++) {
-                    var ul = $("<ul>");
-                    var li = $("<li>");
-                    li.append(`<p>${data[i].name}</p>`);
+                    // var ul = $("<ul>");
+                    // var li = $("<li>");
+                    $("#menu-list").append(`<p>${data[i].name}</p>`);
                     // li.append(`${data[i].id}`);
                     var btndevoured = $("<button>");
                     btndevoured.addClass("devourit");
                     btndevoured.text("Devour-It");
                     btndevoured.attr("data-btn-id",`${data[i].id}`);
-                    li.append(btndevoured);
-                    ul.append(li);
-                    $("#menu-list").append(ul);
+                    $("#menu-list").append(btndevoured);
+                    // li.append(btndevoured);
+                    // ul.append(li);
+                    // $("#menu-list").append(ul);
                 }
             }
         });
     }
 
     getallburgers();
+
     $("#addburgerbtn").on("click", function (event) {
 
         event.preventDefault();
@@ -53,10 +55,6 @@ $(document).ready(function () {
         event.preventDefault();
         
         var id = $(this).attr("data-btn-id");
-        // var newstate = $(this).data(true);
-        var newdevourstate = {
-           
-        };
         
         $.ajax({
             url: `/api/burgers/${id}`,
@@ -65,14 +63,23 @@ $(document).ready(function () {
                 devoured_state: true
             }
         }).then(function (data) {
-            console.log("changed devour to", newdevourstate);
+            
             // Reload the page to get the updated list
             if (data) {
-                getallburgers();
+                //getallburgers();
+                getdevouredburgers();
             }
             location.reload();
         })
+
+
      })
+
+function getdevouredburgers()
+{
+    //$("#menu-list").detach();
+     $("#Devoured").append($('#menu-list>p'));
+}
 
 });
 

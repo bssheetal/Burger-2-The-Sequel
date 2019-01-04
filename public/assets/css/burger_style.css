@@ -1,5 +1,6 @@
 body {
     background-color: #FFC04C;
+ 
 }
 
 
@@ -25,3 +26,8 @@ body {
   .container{
     height: 5%;
   }
+
+  .container img {
+    width: 40%;
+    height: auto;
+}
