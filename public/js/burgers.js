@@ -9,9 +9,11 @@ $(document).ready(function () {
                     var ul = $("<ul>");
                     var li = $("<li>");
                     li.append(`<p>${data[i].name}</p>`);
+                    // li.append(`${data[i].id}`);
                     var btndevoured = $("<button>");
                     btndevoured.addClass("devourit");
                     btndevoured.text("Devour-It");
+                    btndevoured.attr("data-btn-id",`${data[i].id}`);
                     li.append(btndevoured);
                     ul.append(li);
                     $("#menu-list").append(ul);
@@ -27,46 +29,50 @@ $(document).ready(function () {
 
         var newBurger = {
             name: $("#burger").val().trim(),
-            devoured_state:false
+            devoured_state: false
 
         };
-       console.log("New burgers name is"+newBurger);
-        $.post("/api/burgers",newBurger,function(data) {
-                console.log("created new Burger");
-                // Reload the page to get the updated list
-                if(data)
-                {
-                    console.log(data);
-                    getallburgers();
-                    $("#burger").val("");
-                }
-                
+        console.log("New burgers name is" + newBurger);
+        $.post("/api/burgers", newBurger, function (data) {
+            console.log("created new Burger");
+            // Reload the page to get the updated list
+            if (data) {
+                console.log(data);
+                getallburgers();
+                $("#burger").val("");
             }
+
+        }
         );
 
-        
-    });
 
-    $("#devourit").on("click", function (event) {
+    })
+
+    $(document).on("click", ".devourit",function (event) {
         //add this prevent default otherwise both PUT and POST get executed
         event.preventDefault();
-        var id = $(this).attr("data-id");
-        var newstate = $(this).data(true);
+        
+        var id = $(this).attr("data-btn-id");
+        // var newstate = $(this).data(true);
         var newdevourstate = {
-            devoured: newstate
+           
         };
-
+        
         $.ajax({
             url: `/api/burgers/${id}`,
             method: "PUT",
-            data: newdevourstate
-        }).then(function () {
+            data: {
+                devoured_state: true
+            }
+        }).then(function (data) {
             console.log("changed devour to", newdevourstate);
             // Reload the page to get the updated list
-
+            if (data) {
+                getallburgers();
+            }
             location.reload();
         })
-    })
+     })
 
 });
 
