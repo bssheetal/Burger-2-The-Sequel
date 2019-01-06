@@ -1,5 +1,5 @@
- DROP DATABASE IF EXISTS "burgers_sequelize_db"
- CREATE DATABASE burgers_sequelize_db;
+ DROP DATABASE IF EXISTS "ytkqmgp3dktljrpb"
+ CREATE DATABASE ytkqmgp3dktljrpb;
 
- USE burgers_sequelize_db;
+ USE ytkqmgp3dktljrpb;
  
