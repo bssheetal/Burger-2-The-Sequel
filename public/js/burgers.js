@@ -1,4 +1,3 @@
-console.log("Hello there");
 $(document).ready(function () {
 
     function getallburgers() {
@@ -15,7 +14,6 @@ $(document).ready(function () {
                         var ul = $("<ul>");
                         var li = $("<li>");
                         li.addClass("menuitem");
-                       // li.append(`${data[i].id}`);
                         li.append(`<p>${data[i].name}</p>`);                       
                         var btndevoured = $("<button>");
                         btndevoured.addClass("devourit");
@@ -86,10 +84,7 @@ $(document).ready(function () {
             // Reload the page to get the updated list
             if (data) {               
                 console.log(data);
-                //$("#devoured-list").append(`${menuitem}`);
-               // $(this).empty();
                 console.log("this consists"+JSON.stringify(this));
-                //$("#menu-list").empty();
                getallburgers();
             }
             
