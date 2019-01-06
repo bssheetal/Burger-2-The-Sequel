@@ -20,7 +20,7 @@ https://sequelized-burger-lounge.herokuapp.com/
 
 To run the application locally, first clone this repository with the following command.
 
-git clone git@github.com:bssheetal/burger.git
+git@github.com:bssheetal/Burger-2-The-Sequel.git
 Next, install the application dependencies.
 
 npm install
